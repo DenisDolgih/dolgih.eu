@@ -4,6 +4,10 @@ const CACHE_NAME = 'my-vue-app-cache-v1';
 const CACHE_FILES = [
   '/', // Cache the root URL
   '/index.html', // Cache your main HTML file
+  '/manifest.json',
+  '/*.css',
+  '/*.js',
+  '/*.svg',
   // Add other files and assets you want to cache here, e.g., CSS, JavaScript, images, etc.
 ];
 
