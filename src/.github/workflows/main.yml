@@ -31,7 +31,6 @@ jobs:
       - name: Build and Deploy
         run: |
           echo "${{ secrets.USER_SECRET }}@${{ secrets.SERVER_IP_SECRET }}:${{ secrets.SERVER_PATH }}"
-          cd client
           npm install
           npm run build
           scp -r $GITHUB_WORKSPACE/dist/* ${{ secrets.USER_SECRET }}@${{ secrets.SERVER_IP_SECRET }}:${{ secrets.SERVER_PATH }}
