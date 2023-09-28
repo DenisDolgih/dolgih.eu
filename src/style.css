@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'OCR A Std';
+  src: url('./assets/OCRAStd.woff') format('woff');
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: #008F11;
+  line-height: 1.4em;
+}
+a {
+  color: #008F11;
+  text-decoration: none;
+}
+a:hover {
+  font-weight: bold;
+}
+#app {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-size: 16px;
+  font-family: 'OCR A Std', monospace;
+}
