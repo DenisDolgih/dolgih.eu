@@ -5,7 +5,7 @@ const CACHE_FILES = [
   '/', // Cache the root URL
   '/index.html', // Cache your main HTML file
   '/manifest.json',
-  /\.(js|css|svg)$/
+  /\.(js|css|svg|png|woff)$/
 ];
 
 self.addEventListener('install', (event) => {
