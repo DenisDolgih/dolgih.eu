@@ -5,10 +5,9 @@ const CACHE_FILES = [
   '/', // Cache the root URL
   '/index.html', // Cache your main HTML file
   '/manifest.json',
-  '/*.css',
-  '/*.js',
-  '/*.svg',
-  // Add other files and assets you want to cache here, e.g., CSS, JavaScript, images, etc.
+  /\.css$/,
+  /\.js$/,
+  /\.svg$/,
 ];
 
 self.addEventListener('install', (event) => {
