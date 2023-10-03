@@ -12,32 +12,32 @@ const fixedMatrix = [];
 const matrix = ref([]);
 
 onMounted(() => {
-    
+    matrix.value = [];
     const stopLoader = setInterval(() => {
-        matrix.value = [];
         if (textMatrix.length === 0) {
             clearInterval(stopLoader);
         }
 
         for (let i = 0; i < textMatrix.length; i++) {
 
-            if (fixedMatrix.includes(i) || textMatrix[i] == "\n") {
-                matrix.value.push(textMatrix[i]);
+            if (fixedMatrix.includes(i) || textMatrix[i] == "\n" || textMatrix[i] == " ") {
+                matrix.value[i] = textMatrix[i];
             } else {
-                matrix.value.push(String.fromCharCode(Math.floor(Math.random() * 93) + 32));
+                matrix.value[i] = String.fromCharCode(Math.floor(Math.random() * 92) + 33);
                 if (matrix.value[i] == textMatrix?.[i]) {
                     fixedMatrix.push(i);
                 }
             }
 
         }
+        
     }, matrixInterval);
 
     setTimeout(() => {
         clearInterval(stopLoader);
         matrix.value = [];
         for (let i = 0; i < textMatrix.length; i++) {
-            matrix.value.push(textMatrix[i]);
+            matrix.value[i] = textMatrix[i];
         }
     }, maxExecutionTime);
 })
