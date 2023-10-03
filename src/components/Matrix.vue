@@ -45,7 +45,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <span v-for="(letter, i) in matrix" :class="{ real: letter == textMatrix?.[i] }">{{ letter }}</span>
+    <span v-for="(letter, i) in matrix" :class="{ real: letter == textMatrix?.[i] }" :key="i">{{ letter }}</span>
 </template>
   
 <style scoped>
