@@ -8,7 +8,7 @@ import contacts from './assets/contacts.svg'
 <template>
   <nav>
     <router-link to="/"><img :src="home" alt="home icon" />Home</router-link>
-    <a href="https://internetschool.eu"><img :src="pet" alt="pet projects icon" />Pet projects</a>
+    <a href="https://internetschool.eu"><img :src="pet" alt="pet projects icon" />Pet project</a>
     <router-link to="/cv"><img :src="cv" alt="cv in PDF icon" />CV in PDF</router-link>
     <router-link to="/contacts"><img :src="contacts" alt="contacts icon" />Contacts</router-link>
   </nav>
