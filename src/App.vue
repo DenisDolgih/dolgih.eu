@@ -7,10 +7,10 @@ import contacts from './assets/contacts.svg'
 </script>
 <template>
   <nav>
-    <router-link to="/"><img :src="home" alt="home icon"/>Home</router-link>
-    <router-link to="/pet-projects"><img :src="pet" alt="pet projects icon"/>Pet projects</router-link>
-    <router-link to="/cv"><img :src="cv" alt="cv in PDF icon"/>CV in PDF</router-link>
-    <router-link to="/contacts"><img :src="contacts" alt="contacts icon"/>Contacts</router-link>
+    <router-link to="/"><img :src="home" alt="home icon" />Home</router-link>
+    <a href="https://internetschool.eu"><img :src="pet" alt="pet projects icon" />Pet projects</a>
+    <router-link to="/cv"><img :src="cv" alt="cv in PDF icon" />CV in PDF</router-link>
+    <router-link to="/contacts"><img :src="contacts" alt="contacts icon" />Contacts</router-link>
   </nav>
   <main>
     <router-view />
@@ -67,9 +67,9 @@ nav a::before {
 
 nav a:hover::before {
   transform: scaleX(1);
-} 
+}
 
-nav a img{
+nav a img {
   display: block;
   height: 3em;
   margin: 0 auto 10px;
@@ -81,6 +81,7 @@ main {
   max-width: 1080px;
   padding: 10px;
   min-height: calc(100vh - 270px);
+
   @media only screen and (max-width: 650px) {
     text-align: center;
   }
@@ -96,10 +97,8 @@ footer {
   text-decoration: none;
   cursor: default;
 }
+
 .router-link-active img {
   opacity: 1;
 }
-
 </style>
-
-
