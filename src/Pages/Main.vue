@@ -22,11 +22,8 @@ import PixelizedImage from '../components/PixelizedImage.vue';
       <Matrix text="Technology Stack:" />
     </h2>
     <p>
-      <Matrix text="Adminer, Apache, Babel, Bitbucket, Bootstrap, CakePHP, CSS, Cypress, Docker, Firebase, Flask, Git, 
-          GitHub, HTML, IndexedDB, JavaScript, Jest, Jira, jQuery,
-          Laravel, LESS, Linux, Localstorage, MariaDB, Materialize, MongoDB, MySQL, Nginx, PHP, PhpMyAdmin, PHPUnit, Pinia, Postfix, Python, 
-          React, Redux, SASS, Selenium, SQL, SQLite, Tailwind, TypeScript, Vite, Vue, 
-          Vuex, Webpack, Wordpress" />
+      <Matrix
+        text="JavaScript, Vue.js, Next.js, Node.js, Express, PHP, Laravel, PostgreSQL, MySQL, MariaDB, Docker, Nginx, Apache, Git, HTML, CSS, Tailwind, Bootstrap, Vite, ..." />
     </p>
   </section>
   <section id="languages">
@@ -97,6 +94,7 @@ h1 {
   font-size: 2em;
   line-height: 1.5;
 }
+
 h2 {
   font-size: 1.2em;
   margin-top: 0.9em;
@@ -111,18 +109,18 @@ p {
 
 #avatar {
   float: left;
+
   @media only screen and (max-width: 650px) {
     float: none;
   }
 }
 
-#name, #languages {
+#name,
+#languages {
   display: inline-block;
 }
 
-#about{
+#about {
   width: 100%;
 }
-
-
 </style>
