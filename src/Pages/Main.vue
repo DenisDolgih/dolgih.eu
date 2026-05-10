@@ -41,7 +41,8 @@ import PixelizedImage from '../components/PixelizedImage.vue';
       <Matrix text="About Me:" />
     </h2>
     <p>
-      <Matrix text="Hello, I'm Denis Dolgih, a Seasoned Web Developer with Over Two Decades of Experience." />
+      <Matrix
+        text="Hello, I'm Denis Dolgih, a Seasoned Web Developer with Over Two Decades of Experience located in the European Union." />
     </p>
     <p>
       <Matrix text="With more than 20 years of dedicated experience in the ever-evolving world of web development, 
@@ -80,10 +81,7 @@ import PixelizedImage from '../components/PixelizedImage.vue';
           passion for crafting exceptional online experiences, I'd be delighted to discuss how I can contribute 
           to your next project." />
     </p>
-    <p>
-      <Matrix
-        text="I have a legal entity in the European Union and it is easy for customers from any country in the world to work with me." />
-    </p>
+
   </section>
 </template>
 
