@@ -80,6 +80,8 @@ a {
 }
 .contact_icon {
   width: 2em;
+  aspect-ratio: 1;
+  object-fit: contain;
   vertical-align: middle;
 
   @media only screen and (max-width: 480px) {

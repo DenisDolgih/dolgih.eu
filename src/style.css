@@ -1,6 +1,15 @@
 @font-face {
   font-family: 'OCR A Std';
   src: url('./assets/OCRAStd.woff') format('woff');
+  font-display: swap;
+}
+
+/* Metric-matched fallback: OCR A glyphs are 0.72em wide, Courier-like fonts 0.6em,
+   so scale the fallback up to keep the layout identical when the web font swaps in. */
+@font-face {
+  font-family: 'OCR A Fallback';
+  src: local('Courier New'), local('Liberation Mono'), local('Cousine'), local('DejaVu Sans Mono');
+  size-adjust: 120%;
 }
 
 body {
@@ -22,7 +31,7 @@ a:hover {
   padding: 0;
   border: none;
   font-size: 16px;
-  font-family: 'OCR A Std', monospace;
+  font-family: 'OCR A Std', 'OCR A Fallback', monospace;
   display: flex;
   flex-direction: column;
   min-height: 100vh;

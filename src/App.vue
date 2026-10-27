@@ -92,6 +92,8 @@ nav a:hover::before {
 nav a img {
   display: block;
   height: 3em;
+  aspect-ratio: 1;
+  object-fit: contain;
   margin: 0 auto 10px;
   opacity: 0.5;
 
