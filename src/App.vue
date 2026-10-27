@@ -47,6 +47,17 @@ nav {
   @media only screen and (max-width: 650px) {
     font-size: 15px;
   }
+
+  @media only screen and (max-width: 480px) {
+    font-size: 12px;
+    margin-bottom: 15px;
+    padding: 15px 0;
+  }
+
+  @media only screen and (max-width: 360px) {
+    font-size: 10px;
+    padding: 10px 0;
+  }
 }
 
 nav a {
@@ -55,6 +66,10 @@ nav a {
   transition: border-bottom 0.5s;
   position: relative;
   padding-bottom: 15px;
+
+  @media only screen and (max-width: 480px) {
+    padding-bottom: 8px;
+  }
 }
 
 nav a::before {
@@ -79,22 +94,41 @@ nav a img {
   height: 3em;
   margin: 0 auto 10px;
   opacity: 0.5;
+
+  @media only screen and (max-width: 480px) {
+    height: 2.5em;
+    margin-bottom: 5px;
+  }
+
+  @media only screen and (max-width: 360px) {
+    height: 2em;
+  }
 }
 
 main {
   margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
   max-width: 1080px;
   padding: 10px;
-  min-height: calc(100vh - 301px);
+  flex: 1;
 
   @media only screen and (max-width: 650px) {
     text-align: center;
+  }
+
+  @media only screen and (max-width: 480px) {
+    padding: 8px;
   }
 }
 
 footer {
   text-align: center;
   border-top: 1px solid #008f11;
+
+  @media only screen and (max-width: 480px) {
+    font-size: 12px;
+  }
 }
 
 .router-link-active {
