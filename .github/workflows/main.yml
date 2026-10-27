@@ -34,3 +34,11 @@ jobs:
           npm install
           npm run build
           scp -r $GITHUB_WORKSPACE/dist/* ${{ secrets.USER_SECRET }}@${{ secrets.SERVER_IP_SECRET }}:${{ secrets.SERVER_PATH }}
+
+      - name: Remove stale build files
+        # scp never deletes, so hashed files from previous builds pile up on the server.
+        # Only build-generated files are pruned: everything in assets/, plus workbox-*.js,
+        # registerSW.js and manifest.webmanifest in the root, when this build didn't produce them.
+        run: |
+          KEEP=" $(cd $GITHUB_WORKSPACE/dist && find . -type f | sed 's|^\./||' | tr '\n' ' ') "
+          ssh ${{ secrets.USER_SECRET }}@${{ secrets.SERVER_IP_SECRET }} "cd '${{ secrets.SERVER_PATH }}' && for f in assets/* workbox-*.js registerSW.js manifest.webmanifest; do [ -f \"\$f\" ] || continue; case '$KEEP' in *\" \$f \"*) ;; *) echo \"removing \$f\"; rm -f -- \"\$f\";; esac; done"
