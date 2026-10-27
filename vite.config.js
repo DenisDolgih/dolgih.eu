@@ -25,12 +25,17 @@ const inlineCss = ({ maxSize = 10 * 1024 } = {}) => {
       return html.replace(/<link\b[^>]*>/gi, (tag) => {
         if (!/\brel\s*=\s*["']?stylesheet\b/i.test(tag)) return tag
 
-        const href = tag.match(/\bhref\s*=\s*["']?([^"'\s>]+)/i)?.[1]?.split(/[?#]/)[0]
-        if (!href?.startsWith(base) || !href.endsWith('.css')) return tag
+        // No optional chaining in this file: `wrangler deploy` parses it with Esprima,
+        // which doesn't support it.
+        const hrefMatch = tag.match(/\bhref\s*=\s*["']?([^"'\s>]+)/i)
+        if (!hrefMatch) return tag
+
+        const href = hrefMatch[1].split(/[?#]/)[0]
+        if (!href.startsWith(base) || !href.endsWith('.css')) return tag
 
         const fileName = href.slice(base.length)
         const asset = ctx.bundle[fileName]
-        if (asset?.type !== 'asset') return tag
+        if (!asset || asset.type !== 'asset') return tag
 
         const css = typeof asset.source === 'string' ? asset.source : new TextDecoder().decode(asset.source)
         if (css.length > maxSize) return tag
